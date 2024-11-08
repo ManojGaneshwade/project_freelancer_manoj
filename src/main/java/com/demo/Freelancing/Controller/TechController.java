@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.Freelancing.Entity.TechExpert;
-import com.demo.Freelancing.Repository.TechRepository;
 import com.demo.Freelancing.Service.TechService;
 
 @RestController
