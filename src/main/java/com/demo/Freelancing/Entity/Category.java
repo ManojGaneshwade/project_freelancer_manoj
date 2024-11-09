@@ -21,7 +21,7 @@ import jakarta.persistence.Entity;
 	public class Category {
 		
 		
-		@GeneratedValue(strategy=GenerationType.AUTO)
+		//@GeneratedValue(strategy=GenerationType.AUTO)
 		@Id
 		private Long categoryId;
 		
@@ -29,14 +29,31 @@ import jakarta.persistence.Entity;
 		
 		private String categoryDesc;
 		
-		/*@OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
+		@OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
 		@JsonIgnore
 		private List<Services> services;
 			
 		@OneToMany(cascade = CascadeType.ALL,mappedBy = "category")
 		@JsonIgnore
 		private List<Request> request;
-		*/
+		
+		
+		
+		public List<Request> getRequest() {
+			return request;
+		}
+		public void setRequest(List<Request> request) {
+			this.request = request;
+		}
+		public List<Services> getServices() {
+			return services;
+		}
+		public void setServices(List<Services> services) {
+			this.services = services;
+		}
+		
+		
+		
 		
 
 		public Long getCategoryId() {

@@ -1,6 +1,7 @@
 package com.demo.Freelancing.Controller;
 
  import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.Freelancing.Controller.customException.UserNotFoundException;
+import com.demo.Freelancing.Entity.Customer;
 import com.demo.Freelancing.Entity.TechExpert;
 import com.demo.Freelancing.Service.TechService;
 
@@ -53,6 +56,28 @@ public class TechController {
 	{
 		return techService.deleteTech(id);
 	}
+	
+	
+	/////////////////////////////////// Log in  //////////
+	//log in
+	@PostMapping("/tech/login")
+	public ResponseEntity<?> techExpertLogIn(@RequestBody TechExpert techExpert)
+	{
+		Long mobile=techExpert.getMobile();
+		TechExpert existingTechExpert=techService.findByMobile(mobile);
+
+		if(existingTechExpert.getPassword().equals(techExpert.getPassword()))
+		{
+			return new ResponseEntity<>("Log in Successful",HttpStatus.OK);
+		}
+		else
+		{
+			throw new UserNotFoundException("given password is incorrect.");
+		}
+
+	}
+	
+	
 	
 }
 	

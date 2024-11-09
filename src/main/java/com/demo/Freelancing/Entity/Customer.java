@@ -2,12 +2,10 @@ package com.demo.Freelancing.Entity;
 
 import java.util.List;
 
-
-import org.springframework.boot.autoconfigure.cassandra.CassandraProperties.Request;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,13 +25,16 @@ public class Customer {
 	
 	private String email;
 	
+	//@Column(unique = true)
 	 private Long mobile;
+	 
+	 private String password;
 	
 	 private String city;
 	
-/*	@OneToMany(cascade=CascadeType.ALL,mappedBy="customer")
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="customer")
 	@JsonIgnore
-	 private List<Request>request;
+	 private List<Request> request;
 	
 	
 	public List<Request> getRequest() {
@@ -42,7 +43,16 @@ public class Customer {
 	public void setRequest(List<Request> request) {
 		this.request = request;
 	}
-	*/
+	
+	
+	public void setPassword(String password)
+	{
+		this.password=password;
+	}
+	public String getPassword()
+	{
+		return password;
+	}
 	public Long getCustId() {
 		return custId;
 	}

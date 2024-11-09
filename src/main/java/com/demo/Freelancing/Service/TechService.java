@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.demo.Freelancing.Controller.customException.ResourceNotFoundException;
+import com.demo.Freelancing.Controller.customException.UserNotFoundException;
+import com.demo.Freelancing.Entity.Customer;
 import com.demo.Freelancing.Entity.TechExpert;
 import com.demo.Freelancing.Repository.TechRepository;
 
@@ -25,8 +27,15 @@ public class TechService {
 	//create tech
 	public ResponseEntity<?> createTech(TechExpert techExpert) 
 	{
-		TechExpert tech=techRepository.save(techExpert);
-		return new ResponseEntity<>(tech,HttpStatus.CREATED);
+		if(techRepository.existsByMobile(techExpert.getMobile()))
+		{
+			return new ResponseEntity<>("mobile number already registered",HttpStatus.CONFLICT);
+		}
+		else
+		{	
+		TechExpert savedTech=techRepository.save(techExpert);
+		return new ResponseEntity<>(savedTech,HttpStatus.CREATED);
+		}
 	}
 
 	//get all tech
@@ -121,6 +130,23 @@ public class TechService {
 			throw new ResourceNotFoundException("no record present with id "+id);
 		}
 	}
+	
+	
+	//------------------------------TechExpert Log in------------------//
+	
+		public TechExpert findByMobile(Long mobile)
+		{
+			Optional<TechExpert> opTech= techRepository.findByMobile(mobile);
+			if(opTech.isPresent())
+			{
+				TechExpert techExpert=opTech.get();
+				return techExpert;
+			}
+			else
+			{
+				throw new UserNotFoundException(" Given mobile number is incorrect.");
+			}
+		}
 }
 
 

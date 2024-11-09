@@ -2,10 +2,6 @@ package com.demo.Freelancing.Entity;
 
 import java.util.List;
 
-
-import org.springframework.boot.autoconfigure.cassandra.CassandraProperties.Request;
-import org.springframework.stereotype.Service;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
@@ -35,29 +31,47 @@ public class TechExpert {
 	
 	private String city;
 	
+	private Long mobile;
 	
-	//@OneToMany(cascade = CascadeType.ALL,mappedBy = "techExpert")
-	//@JsonIgnore
-	//private List<Service> services;
+	private String password;
+	
+	public Long getMobile() {
+		return mobile;
+	}
+	public void setMobile(Long mobile) {
+		this.mobile = mobile;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 	
-	//@OneToMany(cascade = CascadeType.ALL,mappedBy = "techExpert")
-	//@JsonIgnore
-	//private List<Request> request;
+	
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "techExpert")
+	@JsonIgnore
+	private List<Services> services;
 	
 	
-	//public List<Request> getRequest() {
-	//	return request;
-	//}
-	//public void setRequest(List<Request> request) {
-	//	this.request = request;
-	//}
-//	public List<Service> getServices() {
-	//	return services;
-	//}
-	//public void setServices(List<Service> services) {
-		//this.services = services;
-	//}
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "techExpert")
+	@JsonIgnore
+	private List<Request> request;
+	
+	
+	public List<Request> getRequest() {
+		return request;
+	}
+	public void setRequest(List<Request> request) {
+		this.request = request;
+	}
+	public List<Services> getServices() {
+		return services;
+	}
+	public void setServices(List<Services> services) {
+		this.services = services;
+	}
 	
 	
 	

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.demo.Freelancing.Controller.customException.ResourceNotFoundException;
+import com.demo.Freelancing.Controller.customException.UserNotFoundException;
 import com.demo.Freelancing.Entity.Customer;
 import com.demo.Freelancing.Repository.CustomerRepository;
 
@@ -23,9 +24,16 @@ public class CustomerService {
 
 	//create
 	public ResponseEntity<?>createCustomer(Customer cust){
-		Customer saved=customerRepository.save(cust);
 		
-		return new ResponseEntity<>(saved,HttpStatus.CREATED);
+		if(customerRepository.existsByMobile(cust.getMobile()))
+		{
+			return new ResponseEntity<>("mobile number already registered",HttpStatus.CONFLICT);
+		}
+		else
+		{		
+			Customer saved=customerRepository.save(cust);
+			return new ResponseEntity<>(saved,HttpStatus.CREATED);
+		}
 	}
 	
 	//fetchAll
@@ -117,6 +125,23 @@ public class CustomerService {
 			throw new ResourceNotFoundException("no record present with id "+id);
 		}
 		
+	}
+	
+	
+	//------------------------------Customer Log in------------------//
+	
+	public Customer findByMobile(Long mobile)
+	{
+		Optional<Customer> opCustomer= customerRepository.findByMobile(mobile);
+		if(opCustomer.isPresent())
+		{
+			Customer customer=opCustomer.get();
+			return customer;
+		}
+		else
+		{
+			throw new UserNotFoundException(" Given mobile number is incorrect.");
+		}
 	}
 
 }
