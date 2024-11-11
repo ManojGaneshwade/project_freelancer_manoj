@@ -1,0 +1,1003 @@
+{
+	"info": {
+		"_postman_id": "48f1e192-ef6d-4931-be6b-437ae694a54a",
+		"name": "Freelancer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31387027",
+		"_collection_link": "https://ss1111-1798.postman.co/workspace/freelancing-project~ebcf64b1-48f8-4c9c-a8cd-74af9c390d2b/collection/31387027-48f1e192-ef6d-4931-be6b-437ae694a54a?action=share&source=collection_link&creator=31387027"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryId\": 1002,\r\n    \"categoryName\": \"photoshop\",\r\n    \"categoryDesc\": \"wedding photo shoot\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/category/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/category/fetch",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryDesc\":\"create wedding photo album for marrage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/category/update/1002",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"update",
+								"1002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch one catogory by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/category/fetchById?categoryId=1002",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"fetchById"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "1002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/delete?categoryId=1003",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "1003"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search categoryId by category name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/findByName?categoryName=photoshop",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"findByName"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "photoshop"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tech",
+			"item": [
+				{
+					"name": "create tech",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"techId\":2003,\r\n\"fname\":\"hardik\",\r\n\"lname\":\"pandya\",\r\n\"shopName\":\"store 3\",\r\n\"email\":\"pandya@gmail.com\",\r\n\"city\":\"mumbai\",\r\n\"mobile\":1122334455,\r\n\"password\":\"xyz@123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tech/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tech",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tech",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fname\":\"roman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tech/update?techId=2004",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tech",
+								"update"
+							],
+							"query": [
+								{
+									"key": "techId",
+									"value": "2004"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all tech",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tech/fetch",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tech",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tech by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tech/delete?techId=2004",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tech",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "techId",
+									"value": "2004"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch single record",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/tech/fetchone?techId=2004",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tech",
+								"fetchone"
+							],
+							"query": [
+								{
+									"key": "techId",
+									"value": "2004"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TechExpert Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"mobile\":1122334455,\r\n  \"password\":\"xyz@123\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/tech/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tech",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "create customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"custId\":3005,\r\n    \"fname\":\"akshay\",\r\n    \"lname\":\"raut\",\r\n    \"email\":\"akshay@gmail.com\",\r\n    \"mobile\":1234567899,\r\n    \"password\":\"abc@123\",\r\n    \"city\":\"pune\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/cust/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cust",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cust/fetch",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cust",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch single customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cust/fetchone?custId=3005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cust",
+								"fetchone"
+							],
+							"query": [
+								{
+									"key": "custId",
+									"value": "3005"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cust/delete?custId=3005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cust",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "custId",
+									"value": "3005"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update customer",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\":\"surat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/cust/update?custId=3005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cust",
+								"update"
+							],
+							"query": [
+								{
+									"key": "custId",
+									"value": "3005"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "customer login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobile\":1234567899,\r\n    \"password\":\"abc@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/customer/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "create services",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceName\": \"wedding photo\",\r\n    \"serviceDesc\": \"we do best wedding album shoot.\",\r\n    \"category\":{\"categoryId\":1002},\r\n    \"techExpert\":{\"techId\":2004},\r\n    \"price\": 4000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/services/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/services/fetch",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"fetch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch single service by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/services/fetchone?serviceId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"fetchone"
+							],
+							"query": [
+								{
+									"key": "serviceId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/services/delete?serviceId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "serviceId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update services",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceDesc\": \"instagram photo.\",\r\n     \"category\":{\"categoryId\":1002},\r\n     \"techExpert\":{\"techId\":2004}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/services/update?serviceId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"update"
+							],
+							"query": [
+								{
+									"key": "serviceId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search  services by catId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/services/searchByCategoryId?categoryId=1002",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"searchByCategoryId"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "1002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search services by tech id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/services/searchByTechId?techId=2004",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"searchByTechId"
+							],
+							"query": [
+								{
+									"key": "techId",
+									"value": "2004"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search services by catName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/services/searchByCatName?categoryName=photoshop",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"services",
+								"searchByCatName"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "photoshop"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request",
+			"item": [
+				{
+					"name": "create request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\":{\"custId\":3005},\r\n    \"service\":{\"serviceId\":1},\r\n    \"status\":\"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/request/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch all request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/fetchAll",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"fetchAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update request status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"Completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/request/updateStatus?reqId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"updateStatus"
+							],
+							"query": [
+								{
+									"key": "reqId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/delete?reqId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "reqId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch single request by reqId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/fetchOne?reqId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"fetchOne"
+							],
+							"query": [
+								{
+									"key": "reqId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search request by custId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/findByCustId?custId=3005",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"findByCustId"
+							],
+							"query": [
+								{
+									"key": "custId",
+									"value": "3005"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search request by categoryId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/findByCategoryId?categoryId=1002",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"findByCategoryId"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "1002"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search request by techId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/findByTechId?techId=2004",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"findByTechId"
+							],
+							"query": [
+								{
+									"key": "techId",
+									"value": "2004"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search request by status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/findByStatus?status=completed",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "completed"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search request by category name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/request/findByCategoryName?categoryName=photoshop",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"request",
+								"findByCategoryName"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "photoshop"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
